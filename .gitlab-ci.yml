@@ -5,11 +5,13 @@ stages:
 
 test-style-job:
         stage: test_style
+        tags: [test]
         script:
                 - clang-format /code-samples/main.c
 
 build-job:
         stage: build
+        tags: [test]
         script:
                 - rm -rf build
                 - mkdir -p build
