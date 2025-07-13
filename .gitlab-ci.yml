@@ -1,0 +1,24 @@
+stages:
+        - test_style
+        - build
+        - test
+
+test-style-job:
+        stage: test_style
+        script:
+                - clang-format /code-samples/main.c
+
+build-job:
+        stage: build
+        script:
+                - rm -rf build
+                - mkdir -p build
+                - cd build
+                - make ../code-samples/
+        artifacts:
+                name: test_name
+                paths:
+                        - artifacts/
+                expire_in: 30 day
+
+
