@@ -1,19 +1,22 @@
- stages:
-        - build
-        - test
-        - deploy
+stages:
+       - build
+       - test
+       - deploy
 
 job1:
   stage: build
+  tags: [do6]
   script:
     - echo "билд прошел"
 
 job2:
   stage: test
+  tags: [do6]
   script:
     - echo "тест прошел"
 
 job3:
   stage: deploy
+  tags: [do6]
   script:
     - echo "деплой прошел прошел"
