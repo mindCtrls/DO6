@@ -1,31 +1,7 @@
-# stages:
-#         - test_style
-#         - build
-#         - test
-
-# test-style-job:
-#         stage: test_style
-#         tags: [do6]
-#         script:
-#                 - clang-format /code-samples/main.c
-
-# build-job:
-#         stage: build
-#         tags: [do6]
-#         script:
-#                 - rm -rf build
-#                 - mkdir -p build
-#                 - cd build
-#                 - make ../code-samples/
-#         artifacts:
-#                 name: test_name
-#                 paths:
-#                         - artifacts/
-#                 expire_in: 30 day
  stages:
- - build
- - test
- - deploy
+        - build
+        - test
+        - deploy
 
 job1:
   stage: build
