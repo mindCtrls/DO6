@@ -8,6 +8,8 @@ build-job:
     - cd ./code-samples
     - make all
   artifacts:
+    name: "exe_DO"
+    expose_as: 'DO executable'
     paths:
-      - DO
+      - ./code-samples/DO
     expire_in: 30 days
