@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
     printf("Bad number of arguments!\n");
     return -1;
   }
-  int num =             atoi(argv[1]);
+  int num = atoi(argv[1]);
   switch (num) {
     case 1:
       printf("Learning to Linux\n");
