@@ -1,22 +1,13 @@
 stages:
        - build
-       - test
-       - deploy
 
-job1:
+build-job:
   stage: build
-  tags: [do6]
+  tags: [d06]
   script:
-    - echo "билд прошел"
-
-job2:
-  stage: test
-  tags: [do6]
-  script:
-    - echo "тест прошел"
-
-job3:
-  stage: deploy
-  tags: [do6]
-  script:
-    - echo "деплой прошел прошел"
+    - cd /code-samples
+    - make all
+  artifacs:
+    paths:
+      - binaries/
+    expire_in: 30 days
