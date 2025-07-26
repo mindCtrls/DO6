@@ -1,0 +1,14 @@
+[init]
+	defaultBranch = none
+[fetch]
+	recurseSubmodules = false
+[credential]
+	interactive = never
+[gc]
+	autoDetach = false
+[http]
+	extraHeader = X-Gitaly-Correlation-ID: 01K137KFYVRZA8YCZ4C471KNWF
+[transfer]
+	bundleURI = true
+[http "https://git.21-school.ru"]
+	sslCAInfo = /home/thk/DO6_CICD.ID_356283-1/code-samples/builds/FYt9gGkFA/0/students_repo/fuseatre/DO6_CICD.ID_356283-1.tmp/CI_SERVER_TLS_CA_FILE
