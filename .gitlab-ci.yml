@@ -4,7 +4,7 @@ stages:
 
 codestyle-job:
   stage: codestyle
-  tags: [d06]
+  tags: [do6]
   script:
     - cd ./code-samples
     - clang-format -n *.c || exit 1
