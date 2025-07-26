@@ -9,5 +9,5 @@ build-job:
     - make all
   artifacts:
     paths:
-      - binaries/
+      - DO
     expire_in: 30 days
