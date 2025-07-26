@@ -1,6 +1,7 @@
 stages:
        - codestyle
        - build
+       - integrated_test
 
 codestyle-job:
   stage: codestyle
@@ -22,3 +23,11 @@ build-job:
       - ./code-samples/DO
     expire_in: 30 days
   needs: ["codestyle-job"]
+
+integrated_test-job:
+  stage: integrated_test
+  tags: [do6]
+  script:
+    - cd ./code-samples
+    - sh tests.sh
+  needs: ["build-job"]
