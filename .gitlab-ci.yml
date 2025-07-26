@@ -1,5 +1,13 @@
 stages:
+       - codestyle
        - build
+
+codestyle-job:
+  stage: codestyle
+  tags: [d06]
+  script:
+    - cd ./code-samples
+    - clang-format -n *.c || exit 1
 
 build-job:
   stage: build
@@ -13,3 +21,4 @@ build-job:
     paths:
       - ./code-samples/DO
     expire_in: 30 days
+  needs: ["codestyle-job"]
