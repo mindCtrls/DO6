@@ -7,7 +7,7 @@ codestyle-job:
   tags: [do6]
   script:
     - cd ./code-samples
-    - clang-format -n *.c || exit 1
+    - clang-format -Werror -n *.c
 
 build-job:
   stage: build
