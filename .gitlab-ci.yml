@@ -3,11 +3,11 @@ stages:
 
 build-job:
   stage: build
-  tags: [d06]
+  tags: [do6]
   script:
-    - cd /code-samples
+    - cd ./code-samples
     - make all
-  artifacs:
+  artifacts:
     paths:
       - binaries/
     expire_in: 30 days
