@@ -11,7 +11,7 @@ if ! scp -o StrictHostKeyChecking=no DO "$user@$url:/tmp"; then
 fi
 
 # if ! 
-ssh -o StrictHostKeyChecking=no -i /var/lib/gitlab-runner/.ssh/id_rsa thk@192.168.0.20 "sudo --non-interactive /bin/mv /tmp/DO /usr/local/bin"
+ssh -o StrictHostKeyChecking=no thk@192.168.0.20 "sudo /bin/mv /tmp/DO /usr/local/bin"
 # ; then
 #     echo -e "\e[31m SSH error\e[0m" >&2
 #     exit 1
