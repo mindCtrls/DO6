@@ -6,6 +6,8 @@ tmp=/tmp
 path=/usr/local/bin
 file=DO
 
+whoami
+
 if ! scp -o StrictHostKeyChecking=no -o ConnectTimeout=10 "$file" "$user@$url:$tmp"; then
     echo -e "\e[31m SCP error\e[0m" >&2
     exit 1
