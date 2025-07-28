@@ -36,7 +36,7 @@ deployment-job:
   tags: [do6]
   script:
     - cd ./code-samples
-    - bash copy.sh DO
+    - bash copy.sh
   when: manual
   needs: 
     - codestyle-job
