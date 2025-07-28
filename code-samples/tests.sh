@@ -15,7 +15,7 @@ check() {
   ((counter++))
 }
 
-check "-2" "asjdlahsdjasdh"
+check "-2" "Bad number!"
 check "0.23" "Bad number!"
 check "23" "Bad number!"
 
@@ -28,6 +28,6 @@ check "4" "Learning to extra Monitoring"
 check "5" "Learning to Docker"
 check "6" "Learning to CI/CD"
 
-if [ $failedCount -gt 0 ]; then
+if [ "$failedCount" -gt 0 ]; then
   exit 1 
 fi
