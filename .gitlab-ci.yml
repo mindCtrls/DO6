@@ -38,6 +38,6 @@ deployment-job:
   tags: [do6]
   script:
     - cd ./code-samples
-    - bash copy.sh ./code-samples/DO
+    - bash copy.sh DO
   when: manual
   needs: ["integratedTest-job"]
