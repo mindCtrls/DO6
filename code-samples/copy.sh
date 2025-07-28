@@ -8,6 +8,6 @@ path=/usr/local/bin
 whoami
 
 scp -o StrictHostKeyChecking=no DO $user@$url:$tmp
-ssh -o StrictHostKeyChecking=no -tt $user@$url \ "sudo --non-interactive /bin/mv /tmp/$1 /usr/local/bin/"
+ssh -o StrictHostKeyChecking=no -tt $user@$url \ "sudo --non-interactive /bin/mv /tmp/DO /usr/local/bin/"
 
 exit 0
