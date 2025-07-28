@@ -2,6 +2,7 @@ stages:
        - codestyle
        - build
        - integratedTest
+       - deployment
 
 codestyle-job:
   stage: codestyle
@@ -31,3 +32,12 @@ integratedTest-job:
     - cd ./code-samples
     - bash tests.sh
   needs: ["build-job"]
+
+deployment-job:
+  stage: deployment
+  tags: [do6]
+  script:
+    - cd ./code-samples
+    - bash copy.sh ./code-samples/DO
+  when: manual
+  needs: ["integratedTest-job"]
