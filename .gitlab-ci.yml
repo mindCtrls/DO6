@@ -23,7 +23,6 @@ build-job:
     paths:
       - ./code-samples/DO
     expire_in: 30 days
-  needs: ["codestyle-job"]
 
 integratedTest-job:
   stage: integratedTest
@@ -31,7 +30,6 @@ integratedTest-job:
   script:
     - cd ./code-samples
     - bash tests.sh
-  needs: ["build-job"]
 
 deployment-job:
   stage: deployment
@@ -40,4 +38,7 @@ deployment-job:
     - cd ./code-samples
     - bash copy.sh DO
   when: manual
-  needs: ["integratedTest-job"]
+  needs: 
+    - codestyle-job
+    - build-job
+    - integratedTest-job

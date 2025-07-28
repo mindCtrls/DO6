@@ -9,7 +9,6 @@ path=/usr/local/bin
 echo start
 pwd
 ls
-ping 192.168.0.20
 
 scp $1 $user@$url:$tmp
 ssh -o StrictHostKeyChecking=no -tt $user@$url \ "sudo --non-interactive /bin/mv /tmp/$1 /usr/local/bin/"
