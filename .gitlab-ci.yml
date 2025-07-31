@@ -32,7 +32,7 @@ integratedTest-job:
     - bash tests.sh
   after_script:
     - cd ./code-samples
-    - bash notify.sh "Этап CD успешно пройден"
+    - bash notify.sh "CI"
 
 deployment-job:
   stage: deployment
@@ -47,4 +47,4 @@ deployment-job:
     - integratedTest-job
   after_script:
     - cd ./code-samples
-    - bash notify.sh "Этап CD успешно пройден"
+    - bash notify.sh "CD"
