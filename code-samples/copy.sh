@@ -5,12 +5,12 @@ user=thk
 
 whoami
 
-if ! scp -o StrictHostKeyChecking=no DO "$user@$url:/tmp"; then
+if ! scp -o StrictHostKeyChecking=no -i /var/lib/gitlab-runner/.ssh/id_rsa DO "$user@$url:/tmp"; then
     echo -e "\e[31m SCP error\e[0m" >&2
     exit 1
 fi
 
-if ! ssh -o StrictHostKeyChecking=no -tt $user@$url "sudo --non-interactive /bin/mv /tmp/DO /usr/local/bin/"; then
+if ! ssh -o StrictHostKeyChecking=no -i /var/lib/gitlab-runner/.ssh/id_rsa -tt $user@$url "sudo --non-interactive /bin/mv /tmp/DO /usr/local/bin/"; then
     echo -e "\e[31m SSH error\e[0m" >&2
     exit 1
 fi
