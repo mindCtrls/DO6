@@ -30,6 +30,8 @@ integratedTest-job:
   script:
     - cd ./code-samples
     - bash tests.sh
+  after_script:
+    - bash notify.sh "Этап CD успешно пройден 
 
 deployment-job:
   stage: deployment
@@ -42,3 +44,5 @@ deployment-job:
     - codestyle-job
     - build-job
     - integratedTest-job
+  after_script:
+    - bash notify.sh "Этап CD успешно пройден 
