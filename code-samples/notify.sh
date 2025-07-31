@@ -1,12 +1,13 @@
+#!/bin/bash
 TELEGRAM_BOT_TOKEN="8466818132:AAHvWsKO4HPz_o4tYD-quBWTP2EcsXlJNg0"
 TELEGRAM_USER_ID=580298300
 
 sometext=qwe
 
 if [[ $CI_JOB_STATUS == "success" ]]; then 
-  $sometext= "Этап $1 успешно пройден"
+  sometext="Этап $1 успешно пройден"
 else
-  $sometext= "Этап $1 не пройден"
+  sometext="Этап $1 не пройден"
 fi
 
 URL="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
