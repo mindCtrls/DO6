@@ -2,7 +2,7 @@
 TELEGRAM_BOT_TOKEN="8466818132:AAHvWsKO4HPz_o4tYD-quBWTP2EcsXlJNg0"
 TELEGRAM_USER_ID=580298300
 
-sometext="w"
+sometext=""
 
 check=$(env | grep CI_ )
 
