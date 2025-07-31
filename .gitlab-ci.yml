@@ -30,7 +30,9 @@ integratedTest-job:
   script:
     - cd ./code-samples
     - bash tests.sh
-    - bash notify.sh "CI" "$CI_JOB_STATUS"
+  after_script:
+    - cd ./code-samples
+    - bash notify.sh "CI"
 
 deployment-job:
   stage: deployment
@@ -38,9 +40,11 @@ deployment-job:
   script:
     - cd ./code-samples
     - bash copy.sh
-    - bash notify.sh "CD" "$CI_JOB_STATUS"
   when: manual
   needs: 
     - codestyle-job
     - build-job
     - integratedTest-job
+  after_script:
+    - cd ./code-samples
+    - bash notify.sh "CD"
