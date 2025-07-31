@@ -9,7 +9,7 @@ check=$(env | grep CI_ )
 if [[ "$CI_JOB_STATUS" == "success" ]]; then 
   sometext="Этап $1 успешно пройден $CI_JOB_STATUS $check"
 else
-  sometext="Этап $CI_JOB_STATUS $1 не пройден"
+  sometext="Этап $CI_JOB_STATUS $1 не пройден $check"
 fi
 
 URL="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
