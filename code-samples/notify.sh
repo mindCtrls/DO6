@@ -4,6 +4,8 @@ TELEGRAM_USER_ID=580298300
 
 sometext=qwe
 
+echo "$CI_JOB_STATUS"
+
 if [[ "$CI_JOB_STATUS" == "success" ]]; then 
   sometext="Этап $1 успешно пройден"
 else
