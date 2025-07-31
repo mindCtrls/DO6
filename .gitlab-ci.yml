@@ -31,9 +31,8 @@ integratedTest-job:
     - cd ./code-samples
     - bash tests.sh
   after_script:
-    - echo "Debug: CI_JOB_STATUS = $CI_JOB_STATUS"  # Проверка значения
     - cd ./code-samples
-    - bash notify.sh "CI" "$CI_JOB_STATUS"  # Явная передача статуса
+    - bash notify.sh "CI" "$CI_JOB_STATUS"
 
 deployment-job:
   stage: deployment
