@@ -31,6 +31,7 @@ integratedTest-job:
     - cd ./code-samples
     - bash tests.sh
   after_script:
+    - echo "DEBUG: CI_JOB_STATUS in after_script = [$CI_JOB_STATUS]"
     - cd ./code-samples
     - bash notify.sh "CI" "$CI_JOB_STATUS"
 
@@ -46,5 +47,6 @@ deployment-job:
     - build-job
     - integratedTest-job
   after_script:
+    - echo "DEBUG: CI_JOB_STATUS in after_script = [$CI_JOB_STATUS]"
     - cd ./code-samples
-    - bash notify.sh "CD" "$CI_JOB_STATUS"
+    - bash notify.sh "CI" "$CI_JOB_STATUS"
