@@ -2,7 +2,7 @@ TELEGRAM_BOT_TOKEN="8466818132:AAHvWsKO4HPz_o4tYD-quBWTP2EcsXlJNg0"
 TELEGRAM_USER_ID=580298300
 
 
-if [[ $CI_JOB_STATUS == "success"]]; then 
+if [[ $CI_JOB_STATUS == "success" ]]; then 
   sometext= "Этап $1 успешно пройден"
 else
   sometext= "Этап $1 не пройден"
