@@ -4,8 +4,10 @@ TELEGRAM_USER_ID=580298300
 
 sometext=""
 
+check=$(env | grep CI_ )
+
 if [[ "$CI_JOB_STATUS" == "success" ]]; then 
-  sometext="Этап $1 успешно пройден $CI_JOB_STATUS"
+  sometext="Этап $1 успешно пройден $CI_JOB_STATUS $check"
 else
   sometext="Этап $CI_JOB_STATUS $1 не пройден"
 fi
