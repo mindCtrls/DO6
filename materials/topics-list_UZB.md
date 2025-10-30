@@ -1,4 +1,4 @@
-Salom, School 21 ishtirokchisi! 😉
+Salom,  ishtirokchisi! 😉
 
 Sizga osonroq bo’lishi uchun biz ushbu loyihani bajarishda alohida e'tibor berishingiz kerak bo'lgan mavzular ro'yxatini tayyorladik:
 
